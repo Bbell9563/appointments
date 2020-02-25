@@ -1,0 +1,12 @@
+<h1><%= @doctor.id ? "Update Doctor" : "Add Doctor" %></h1>
+
+<%= form_with(model: @doctor, local: true, class: 'ui form') do |f|%>
+  <div class = "field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, required: true, placeholder: "First Name" %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, required: true, placeholder: "Last Name" %>
+  </div>
+  <%= f.submit nil, class: "ui blue button inverted"%>
+<% end%>    

@@ -1,0 +1,11 @@
+
+<%= link_to "Add Doctor", new_doctor_path%>
+<%@doctors.each do |doctor|%>
+  <div>
+    <h3><%= link_to doctor.full_name, doctor %></h3>
+    <h6>
+      <%= link_to "Update #{doctor.title} ? ", edit_doctor_path(doctor)%>
+      <%= link_to "Delete #{doctor.title} ? ", doctor, method: :delete%>
+    </h6>
+  </div>
+<%end%>
