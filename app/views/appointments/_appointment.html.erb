@@ -1,0 +1,9 @@
+<hr />
+<h3>Schelduled Appointment</h3>
+<% @doctor = Doctor.find(appointment.doctor_id)%>
+<% @patient = Doctor.find(appointment.patient_id)%>
+
+<p><%= "At #{appointment.time} on #{appointment.date}" %></p>
+<p><%= "Appointment is with#{@doctor.title}, the patient is #{@patient.full_name}"%></p>
+</hr>
+

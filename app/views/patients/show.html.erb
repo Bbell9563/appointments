@@ -1,4 +1,9 @@
 
 <h1><%= @patient.full_name %></h1>
-<h5><%= @patient.age %></h5>
-<h5><%= @patient.gender %></h5>
+<%= link_to "Delete", @patient, method: :destroy%>
+<%= link_to "Update", edit_patient_path(@patient)%>
+<h5>Age:<%= @patient.age %></h5>
+<h5>Gender:<%= @patient.gender %></h5>
+<% @patient.appointments.each do |appointment|%>
+  <%= render 'appointments/appointment', {appointment: appointment}%>
+<% end %>

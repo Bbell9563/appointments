@@ -3,3 +3,6 @@
 <h3>AKA: <%= @doctor.title %></h3>
 <h4><%= link_to "Delete", @doctor, method: :delete%></h4>
 <h4><%= link_to "Update", edit_doctor_path(@doctor)%></h4>
+<% @doctor.appointments.each do |appointment|%>
+  <%= render 'appointments/appointment', {appointment: appointment}%>
+<% end %>

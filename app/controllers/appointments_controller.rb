@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :set_patients, only: [:edit, :update, :new, :create]
   before_action :set_doctors, only: [:edit, :update, :new, :create]
 
-  before_action :set_appointment, only: [:show]
+  before_action :set_appointment, only: [:show, :update, :edit, :destroy]
 
 
   def show
@@ -27,6 +27,19 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @appointment.update(appointment_params)
+      redirect_to appointment_path(@appointment)
+    else  
+      render :edit
+    end
+  end
+
+  def destroy 
+    @appointment.destroy
+    redirect_to appointments_path
   end
 
   private

@@ -4,7 +4,9 @@
 
 <% if @appointments.length > 0 %>
   <% @appointments.each do |appointment| %>
-    <%= link_to "Appointment at #{appointment.time} on #{appointment.date}", appointment_path(appointment) %>
+    <p><%= link_to "Appointment at #{appointment.time} on #{appointment.date}", appointment_path(appointment) %></p>
+    <p><%= link_to "Cancel Appointment", appointment_path(appointment), method: :delete %></p>
+    <p><%= link_to "Update Appointment", edit_appointment_path(appointment)%></p>
   <% end %> 
 <% else %>
   <h5 class = "font "> No Appointments Listed </h5>
